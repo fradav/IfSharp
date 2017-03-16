@@ -1,11 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content="F# Jupyter Notebooks">
-    <meta http-equiv="refresh" content="0; url=https://github.com/fsprojects/IfSharp">
-    <link rel="canonical" href="https://github.com/fsprojects/IfSharp" />
+    <meta charset="utf-8">
+    <title>Custom display printers
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="F# kernel for Jupyter">
+    <meta name="author" content="Bayard Rock (Peter Rosconi)">
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="/IfSharp/content/style.css" />
+    <script type="text/javascript" src="/IfSharp/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <p>Please see <a href="https://github.com/fsprojects/IfSharp">https://github.com/fsprojects/IfSharp</a>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/fsprojects/IfSharp/">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/IfSharp/index.html">IfSharp</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+<h1>Custom display printers</h1>
+<p>Custom display printers can be added during runtime based off of type.
+Example for providing a custom display printer for <code>float</code> to display a pink div:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">App</span><span class="o">.</span><span class="i">AddDisplayPrinter</span>(<span class="k">fun</span> (<span class="i">x</span><span class="o">:</span><span class="i">float</span>) <span class="k">-&gt;</span>
+    {
+        <span class="i">ContentType</span> <span class="o">=</span> <span class="s">&quot;text/html&quot;</span>
+        <span class="i">Data</span> <span class="o">=</span> <span class="s">&quot;&lt;div style=\&quot;background-color: pink\&quot;&gt;&quot;</span> <span class="o">+</span> <span class="i">x</span><span class="o">.</span><span class="i">ToString</span>() <span class="o">+</span> <span class="s">&quot;&lt;/div&gt;&quot;</span>
+    }
+)
+</code></pre></td>
+</tr>
+</table>
+<p>To invoke the printer:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="n">1.0</span> <span class="o">|&gt;</span> <span class="i">Display</span>
+</code></pre></td>
+</tr>
+</table>
+<p>Will render <div style="background-color: pink">1</div></p>
+<h1>Custom fsi printers</h1>
+<p>Similarly, FSI printers can be added which can provide display a string for a type.
+However, a more complex implementation could send display data directly to the client
+as a side-effect, which will skip the need for calling the <code>Display</code> function directly
+from the notebook. Example:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">App</span><span class="o">.</span><span class="i">AddFsiPrinter</span>(<span class="k">fun</span> (<span class="i">x</span><span class="o">:</span><span class="i">float</span>) <span class="k">-&gt;</span>
+    <span class="i">App</span><span class="o">.</span><span class="i">Kernel</span><span class="o">.</span><span class="i">Value</span><span class="o">.</span><span class="i">SendDisplayData</span>(<span class="s">&quot;text/html&quot;</span>, <span class="s">&quot;&lt;div style=\&quot;background-color: pink\&quot;&gt;&quot;</span> <span class="o">+</span> <span class="i">x</span><span class="o">.</span><span class="i">ToString</span>() <span class="o">+</span> <span class="s">&quot;&lt;/div&gt;&quot;</span>)
+    <span class="i">x</span><span class="o">.</span><span class="i">ToString</span>()
+)
+</code></pre></td>
+</tr>
+</table>
+<p>Now, executing a cell with the following code:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="n">1.0</span>
+</code></pre></td>
+</tr>
+</table>
+<p>Will render as: <div style="background-color: pink">1</div></p>
+<p>However, executing a cell with the following code:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp">[<span class="n">1.0</span>; <span class="n">2.0</span>; <span class="n">3.0</span>;]
+</code></pre></td>
+</tr>
+</table>
+<p>Will render as:
+<div style="background-color: pink">1</div>
+<div style="background-color: pink">2</div>
+<div style="background-color: pink">3</div></p>
+
+
+        </div>
+        <div class="span3">
+          <ul class="nav nav-list" id="menu">
+            <li class="nav-header">IfSharp</li>
+            <li><a href="/IfSharp/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="https://github.com/BayardRock/IfSharp/releases">Releases</a></li>
+            <li><a href="/IfSharp/installation.html">Installation</a></li>
+            <li class="divider"></li>
+            <li><a href="/IfSharp/globals.html">Globals</a></li>
+            <li><a href="/IfSharp/utils.html">Utils</a></li>
+            <li><a href="/IfSharp/customPrinters.html">Custom Printers</a></li>
+            <li class="divider"></li>
+            <li><a href="http://github.com/fsprojects/IfSharp/">Source Code on GitHub</a></li>
+            <li><a href="http://github.com/fsprojects/IfSharp/blob/master/LICENSE.txt">License</a></li>
+            <li><a href="http://github.com/fsprojects/IfSharp/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/fsprojects/IfSharp/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
   </body>
-</html>
+  </html>

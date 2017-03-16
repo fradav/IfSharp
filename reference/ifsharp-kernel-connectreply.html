@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Windows Installation
-</title>
+    <title>ConnectReply - IfSharp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="F# kernel for Jupyter">
+    <meta name="description" content="">
     <meta name="author" content="Bayard Rock (Peter Rosconi)">
 
     <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
@@ -33,42 +32,79 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h1>Windows Installation</h1>
-<h2>Automatic Installation</h2>
-<ol>
-<li>Install <a href="http://continuum.io/downloads">Anaconda</a></li>
-<li>Install <a href="http://ipython.org/install.html">IPython</a></li>
-<li>Download the latest version of IfSharp from the <a href="https://github.com/BayardRock/IfSharp/releases">release repository</a></li>
-<li>Run the setup wizard and execute the icon that is placed on the desktop</li>
-</ol>
-<p>Running the executable after it is installed will automatically generate the files necessary for starting up (if the file structure does not exist) and then execute the <code>ipython notebook --profile ifsharp</code> command.</p>
-<p>To overwrite the file structure again, invoke ifsharp.exe with the install parameter: <code>ifsharp.exe --install</code>.</p>
-<h2>Manual Installation</h2>
-<ol>
-<li>Install <a href="http://continuum.io/downloads">Anaconda</a></li>
-<li>Install <a href="http://ipython.org/install.html">IPython</a></li>
-<li>Either open the iF# solution file, restore nuget packages, and compile it</li>
-<li>Or run <code>./build.cmd</code> from the command line</li>
-<li>Run <code>isharp.exe --install</code> to set up the F# kernel</li>
-<li><code>jupyter notebook</code></li>
-</ol>
-<h1>Linux Installation</h1>
-<ol>
-<li>Use your package manager to install <code>mono</code>, <code>fsharp</code>, and <code>python3</code></li>
-<li><code>pip3 install jupyter</code></li>
-<li>Download IfSharp and build it with <code>./build.sh</code></li>
-<li>Install IfSharp with <code>mono ./bin/ifsharp.exe --install</code></li>
-<li><code>jupyter notebook</code></li>
-</ol>
-<h1>OSX Installation</h1>
-<ol>
-<li><code>brew install mono fsharp python3</code></li>
-<li><code>pip3 install jupyter</code></li>
-<li>Download IfSharp and build it with <code>./build.sh</code></li>
-<li>Install IfSharp with <code>mono ./bin/ifsharp.exe --install</code></li>
-<li><code>jupyter notebook</code></li>
-</ol>
 
+
+
+<h1>ConnectReply</h1>
+<p>
+  <span>Namespace: IfSharp.Kernel</span><br />
+</p>
+<div class="xmldoc">
+</div>
+  <h3>Record Fields</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Record Field</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '94', 94)" onmouseover="showTip(event, '94', 94)">
+            hb_port
+          </code>
+          <div class="tip" id="94">
+            <strong>Signature:</strong> int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '95', 95)" onmouseover="showTip(event, '95', 95)">
+            iopub_port
+          </code>
+          <div class="tip" id="95">
+            <strong>Signature:</strong> int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '96', 96)" onmouseover="showTip(event, '96', 96)">
+            shell_port
+          </code>
+          <div class="tip" id="96">
+            <strong>Signature:</strong> int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '97', 97)" onmouseover="showTip(event, '97', 97)">
+            stdin_port
+          </code>
+          <div class="tip" id="97">
+            <strong>Signature:</strong> int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
         </div>
         <div class="span3">

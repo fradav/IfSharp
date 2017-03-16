@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NuGetManager - IfSharp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Bayard Rock (Peter Rosconi)">
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="/IfSharp/content/style.css" />
+    <script type="text/javascript" src="/IfSharp/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/fsprojects/IfSharp/">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/IfSharp/index.html">IfSharp</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>NuGetManager</h1>
+<p>
+  <span>Namespace: IfSharp.Kernel</span><br />
+</p>
+<div class="xmldoc">
+<p>The NuGetManager class contains methods for downloading nuget packages and such</p>
+
+</div>
+  <h3>Constructors</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Constructor</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '185', 185)" onmouseover="showTip(event, '185', 185)">
+            new(executingDirectory)
+          </code>
+          <div class="tip" id="185">
+            <strong>Signature:</strong> executingDirectory:string -&gt; NuGetManager<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '186', 186)" onmouseover="showTip(event, '186', 186)">
+            add_StdErrDataReceived(arg1)
+          </code>
+          <div class="tip" id="186">
+            <strong>Signature:</strong> Handler&lt;obj&gt; -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>This event is called whenever a line is written to the error writer</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '187', 187)" onmouseover="showTip(event, '187', 187)">
+            add_StdOutDataReceived(arg1)
+          </code>
+          <div class="tip" id="187">
+            <strong>Signature:</strong> Handler&lt;obj&gt; -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>This event is called whenever a line is written to the error writer</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '188', 188)" onmouseover="showTip(event, '188', 188)">
+            PackagesDir
+          </code>
+          <div class="tip" id="188">
+            <strong>Signature:</strong> string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>The directory for the packages</p>
+
+
+              <p>CompiledName: <code>get_PackagesDir</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '189', 189)" onmouseover="showTip(event, '189', 189)">
+            ParseNugetLine(line)
+          </code>
+          <div class="tip" id="189">
+            <strong>Signature:</strong> line:string -&gt; string * string option * bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>Parses a 'nuget line'. Example #N "<package>[/<version>[/pre]]".
+Returns a tuple with the name of the package, the version, and if
+prerelease should be used or not.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '190', 190)" onmouseover="showTip(event, '190', 190)">
+            Preprocess(source)
+          </code>
+          <div class="tip" id="190">
+            <strong>Signature:</strong> source:string -&gt; PreprocessResults<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>Preprocesses the specified source string</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '191', 191)" onmouseover="showTip(event, '191', 191)">
+            remove_StdErrDataReceived(arg1)
+          </code>
+          <div class="tip" id="191">
+            <strong>Signature:</strong> Handler&lt;obj&gt; -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>This event is called whenever a line is written to the error writer</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '192', 192)" onmouseover="showTip(event, '192', 192)">
+            remove_StdOutDataReceived(arg1)
+          </code>
+          <div class="tip" id="192">
+            <strong>Signature:</strong> Handler&lt;obj&gt; -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>This event is called whenever a line is written to the error writer</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '193', 193)" onmouseover="showTip(event, '193', 193)">
+            StdErrDataReceived
+          </code>
+          <div class="tip" id="193">
+            <strong>Signature:</strong> IEvent&lt;obj&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>This event is called whenever a line is written to the error writer</p>
+
+
+              <p>CompiledName: <code>get_StdErrDataReceived</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '194', 194)" onmouseover="showTip(event, '194', 194)">
+            StdOutDataReceived
+          </code>
+          <div class="tip" id="194">
+            <strong>Signature:</strong> IEvent&lt;obj&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>This event is called whenever a line is written to the error writer</p>
+
+
+              <p>CompiledName: <code>get_StdOutDataReceived</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <ul class="nav nav-list" id="menu">
+            <li class="nav-header">IfSharp</li>
+            <li><a href="/IfSharp/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="https://github.com/BayardRock/IfSharp/releases">Releases</a></li>
+            <li><a href="/IfSharp/installation.html">Installation</a></li>
+            <li class="divider"></li>
+            <li><a href="/IfSharp/globals.html">Globals</a></li>
+            <li><a href="/IfSharp/utils.html">Utils</a></li>
+            <li><a href="/IfSharp/customPrinters.html">Custom Printers</a></li>
+            <li class="divider"></li>
+            <li><a href="http://github.com/fsprojects/IfSharp/">Source Code on GitHub</a></li>
+            <li><a href="http://github.com/fsprojects/IfSharp/blob/master/LICENSE.txt">License</a></li>
+            <li><a href="http://github.com/fsprojects/IfSharp/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/fsprojects/IfSharp/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  </body>
+  </html>

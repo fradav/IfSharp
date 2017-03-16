@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Util - IfSharp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Bayard Rock (Peter Rosconi)">
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="/IfSharp/content/style.css" />
+    <script type="text/javascript" src="/IfSharp/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/fsprojects/IfSharp/">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/IfSharp/index.html">IfSharp</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>Util</h1>
+<p>
+  <span>Namespace: IfSharp.Kernel</span><br />
+</p>
+<div class="xmldoc">
+</div>
+  <h3>Static members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Static member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '258', 258)" onmouseover="showTip(event, '258', 258)">
+            Base64(bytes, contentType)
+          </code>
+          <div class="tip" id="258">
+            <strong>Signature:</strong> (bytes:seq&lt;byte&gt; * contentType:string) -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '259', 259)" onmouseover="showTip(event, '259', 259)">
+            CreatePublicFile(name content)
+          </code>
+          <div class="tip" id="259">
+            <strong>Signature:</strong> name:string -&gt; (content:byte []) -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '260', 260)" onmouseover="showTip(event, '260', 260)">
+            Html(str)
+          </code>
+          <div class="tip" id="260">
+            <strong>Signature:</strong> str:string -&gt; HtmlOutput<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>Wraps a HtmlOutput around a string in order to send to the UI.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '261', 261)" onmouseover="showTip(event, '261', 261)">
+            Image(fileName)
+          </code>
+          <div class="tip" id="261">
+            <strong>Signature:</strong> fileName:string -&gt; BinaryOutput<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>Loads a local image from disk and wraps a BinaryOutput around the image data.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '262', 262)" onmouseover="showTip(event, '262', 262)">
+            Image(bytes, contentType)
+          </code>
+          <div class="tip" id="262">
+            <strong>Signature:</strong> (bytes:seq&lt;byte&gt; * contentType:string option) -&gt; BinaryOutput<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>Wraps a BinaryOutput around image bytes with the specified content-type</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '263', 263)" onmouseover="showTip(event, '263', 263)">
+            Latex(str)
+          </code>
+          <div class="tip" id="263">
+            <strong>Signature:</strong> str:string -&gt; LatexOutput<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>Wraps a LatexOutput around a string in order to send to the UI.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '264', 264)" onmouseover="showTip(event, '264', 264)">
+            Math(str)
+          </code>
+          <div class="tip" id="264">
+            <strong>Signature:</strong> str:string -&gt; LatexOutput<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>Wraps a LatexOutput around a string in order to send to the UI.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '265', 265)" onmouseover="showTip(event, '265', 265)">
+            MergeSvg(svg1 svg2)
+          </code>
+          <div class="tip" id="265">
+            <strong>Signature:</strong> svg1:string -&gt; svg2:string -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '266', 266)" onmouseover="showTip(event, '266', 266)">
+            MoveSvg(svg delta)
+          </code>
+          <div class="tip" id="266">
+            <strong>Signature:</strong> svg:string -&gt; (delta:(float * float)) -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '267', 267)" onmouseover="showTip(event, '267', 267)">
+            Row(columns item)
+          </code>
+          <div class="tip" id="267">
+            <strong>Signature:</strong> columns:seq&lt;PropertyInfo&gt; -&gt; item:&#39;A -&gt; string []<br />
+                          <strong>Type parameters:</strong> 'A          </div>
+        </td>
+        <td class="xmldoc">
+          <p>Creates an array of strings with the specified properties and the item to get the values out of.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '268', 268)" onmouseover="showTip(event, '268', 268)">
+            Svg(str)
+          </code>
+          <div class="tip" id="268">
+            <strong>Signature:</strong> str:string -&gt; SvgOutput<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '269', 269)" onmouseover="showTip(event, '269', 269)">
+            Table(items, propertyNames)
+          </code>
+          <div class="tip" id="269">
+            <strong>Signature:</strong> (items:seq&lt;&#39;A&gt; * propertyNames:seq&lt;string&gt; option) -&gt; TableOutput<br />
+                          <strong>Type parameters:</strong> 'A          </div>
+        </td>
+        <td class="xmldoc">
+          <p>Creates a TableOutput out of a sequence of items and a list of property names.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '270', 270)" onmouseover="showTip(event, '270', 270)">
+            Url(url)
+          </code>
+          <div class="tip" id="270">
+            <strong>Signature:</strong> url:string -&gt; BinaryOutput<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          <p>Downloads the specified url and wraps a BinaryOutput around the results.</p>
+
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <ul class="nav nav-list" id="menu">
+            <li class="nav-header">IfSharp</li>
+            <li><a href="/IfSharp/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="https://github.com/BayardRock/IfSharp/releases">Releases</a></li>
+            <li><a href="/IfSharp/installation.html">Installation</a></li>
+            <li class="divider"></li>
+            <li><a href="/IfSharp/globals.html">Globals</a></li>
+            <li><a href="/IfSharp/utils.html">Utils</a></li>
+            <li><a href="/IfSharp/customPrinters.html">Custom Printers</a></li>
+            <li class="divider"></li>
+            <li><a href="http://github.com/fsprojects/IfSharp/">Source Code on GitHub</a></li>
+            <li><a href="http://github.com/fsprojects/IfSharp/blob/master/LICENSE.txt">License</a></li>
+            <li><a href="http://github.com/fsprojects/IfSharp/blob/master/RELEASE_NOTES.md">Release Notes</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/fsprojects/IfSharp/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  </body>
+  </html>
